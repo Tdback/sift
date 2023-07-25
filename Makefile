@@ -1,15 +1,16 @@
-target_file := sift.go
-exec_file := ./sift
+BINARY_NAME := sift
+SOURCE := ./src/sift.go
 
-sift:
-	go mod tidy
-	gofmt -w $(target_file)
-	go build .
+all: build
 
-install:
-	go mod init sift
+build:
+	go build -o ${BINARY_NAME} ${SOURCE}
+
+run:
+	go build -o ${BINARY_NAME} ${SOURCE}
+	./${BINARY_NAME}
 
 .PHONY: clean
 clean:
-	$(RM) $(exec_file)
-	$(RM) ./go.mod
+	go clean
+	rm ${BINARY_NAME}
