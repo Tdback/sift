@@ -1,0 +1,3 @@
+#+TITLE: Sift
+
+Sift is a Go-powered middle-ground between Unix's =find= and Plan 9's =sor=.
